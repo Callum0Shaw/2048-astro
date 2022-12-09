@@ -1,0 +1,55 @@
+---
+
+---
+
+<button type="button" class="button reset">Reset</button>
+
+<div class="game__grid">
+  <div class="game__row" data-row="1">
+    <div class="game__square" data-column="1"></div>
+    <div class="game__square" data-column="2"></div>
+    <div class="game__square" data-column="3"></div>
+    <div class="game__square" data-column="4"></div>
+  </div>
+  <div class="game__row" data-row="2">
+    <div class="game__square" data-column="1"></div>
+    <div class="game__square" data-column="2"></div>
+    <div class="game__square" data-column="3"></div>
+    <div class="game__square" data-column="4"></div>
+  </div>
+  <div class="game__row" data-row="3">
+    <div class="game__square" data-column="1"></div>
+    <div class="game__square" data-column="2"></div>
+    <div class="game__square" data-column="3"></div>
+    <div class="game__square" data-column="4"></div>
+  </div>
+  <div class="game__row" data-row="4">
+    <div class="game__square" data-column="1"></div>
+    <div class="game__square" data-column="2"></div>
+    <div class="game__square" data-column="3"></div>
+    <div class="game__square" data-column="4"></div>
+  </div>
+</div>
+<style>
+  .game__grid {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+    border: 2px solid black;
+  }
+  .game__row {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    height: 80px;
+    gap: 20px;
+  }
+  .game__square {
+    font-size: 2.5em;
+    border: 2px solid black;
+    border-radius: 3px;
+  }
+</style>
+<script src='../scripts/2048.js'></script>
