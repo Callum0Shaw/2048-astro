@@ -1,0 +1,12 @@
+---
+const { column } = Astro.props;
+---
+
+<div class="game__square" data-column={column}></div>
+<style>
+  .game__square {
+    font-size: 2.5em;
+    border: 2px solid black;
+    border-radius: 3px;
+  }
+</style>

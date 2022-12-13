@@ -1,22 +1,26 @@
 ---
 import Grid from '../components/Grid.astro';
-
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>How to Play</h1>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>How to Play</h1>
     <p>
       Use the arrow keys to move the numbers. Numbers of the same value will
       combine. Get to 2048!
     </p>
-		<Grid />
-	</body>
+    <Grid />
+  </body>
 </html>
+<style>
+  body {
+    background-color: linen;
+  }
+</style>

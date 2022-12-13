@@ -1,36 +1,33 @@
 ---
-
+import Square from './Square.astro';
+const size = [1, 2, 3, 4];
 ---
 
 <button type="button" class="button reset">Reset</button>
-
-<div class="game__grid">
-  <div class="game__row" data-row="1">
-    <div class="game__square" data-column="1"></div>
-    <div class="game__square" data-column="2"></div>
-    <div class="game__square" data-column="3"></div>
-    <div class="game__square" data-column="4"></div>
+<div class="game__container">
+  <div class="game__grid">
+    {
+      size.map((row) => (
+        <div class="game__row" data-row={row}>
+          {size.map((column) => (
+            <Square column={column} />
+          ))}
+        </div>
+      ))
+    }
   </div>
-  <div class="game__row" data-row="2">
-    <div class="game__square" data-column="1"></div>
-    <div class="game__square" data-column="2"></div>
-    <div class="game__square" data-column="3"></div>
-    <div class="game__square" data-column="4"></div>
-  </div>
-  <div class="game__row" data-row="3">
-    <div class="game__square" data-column="1"></div>
-    <div class="game__square" data-column="2"></div>
-    <div class="game__square" data-column="3"></div>
-    <div class="game__square" data-column="4"></div>
-  </div>
-  <div class="game__row" data-row="4">
-    <div class="game__square" data-column="1"></div>
-    <div class="game__square" data-column="2"></div>
-    <div class="game__square" data-column="3"></div>
-    <div class="game__square" data-column="4"></div>
-  </div>
+  <div class="tile__grid"></div>
 </div>
-<style>
+<style is:global>
+  .game__container {
+    --gutter: 20px;
+    --border: 2px;
+    --squareSize: 76px;
+    position: relative;
+    width: 424px;
+    height: 424px;
+    margin: auto;
+  }
   .game__grid {
     display: flex;
     gap: 20px;
@@ -46,10 +43,115 @@
     height: 80px;
     gap: 20px;
   }
-  .game__square {
-    font-size: 2.5em;
-    border: 2px solid black;
+  .tile__grid {
+    position: absolute;
+    top: 0;
+  }
+  .tile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 76px;
+    width: 76px;
     border-radius: 3px;
+    background-color: bisque;
+    transition: all .3s ease-in;
+  }
+  .tile1-1 {
+    transform: translate(
+      calc(var(--gutter) + (2 * var(--border))),
+      calc(var(--gutter) + (2 * var(--border)))
+    );
+  }
+  .tile2-1 {
+    transform: translate(
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border))),
+      calc(var(--gutter) + (2 * var(--border)))
+    );
+  }
+  .tile3-1 {
+    transform: translate(
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border))),
+      calc(var(--gutter) + (2 * var(--border)))
+    );
+  }
+  .tile4-1 {
+    transform: translate(
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border))),
+      calc(var(--gutter) + (2 * var(--border)))
+    );
+  }
+  .tile1-2 {
+    transform: translate(
+      calc(var(--gutter) + (2 * var(--border))),
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border)))
+    );
+  }
+  .tile2-2 {
+    transform: translate(
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border))),
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border)))
+    );
+  }
+  .tile3-2 {
+    transform: translate(
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border))),
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border)))
+    );
+  }
+  .tile4-2 {
+    transform: translate(
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border))),
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border)))
+    );
+  }
+  .tile1-3 {
+    transform: translate(
+      calc(var(--gutter) + (2 * var(--border))),
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border)))
+    );
+  }
+  .tile2-3 {
+    transform: translate(
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border))),
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border)))
+    );
+  }
+  .tile3-3 {
+    transform: translate(
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border))),
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border)))
+    );
+  }
+  .tile4-3 {
+    transform: translate(
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border))),
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border)))
+    );
+  }
+  .tile1-4 {
+    transform: translate(
+      calc(var(--gutter) + (2 * var(--border))),
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border)))
+    );
+  }
+  .tile2-4 {
+    transform: translate(
+      calc((var(--gutter) * 2) + (var(--squareSize) * 1) + (4 * var(--border))),
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border)))
+    );
+  }
+  .tile3-4 {
+    transform: translate(
+      calc((var(--gutter) * 3) + (var(--squareSize) * 2) + (6 * var(--border))),
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border)))
+    );
+  }
+  .tile4-4 {
+    transform: translate(
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border))),
+      calc((var(--gutter) * 4) + (var(--squareSize) * 3) + (8 * var(--border)))
+    );
   }
 </style>
-<script src='../scripts/2048.js'></script>
+<script src="../scripts/2048.js"></script>
