@@ -26,6 +26,10 @@ let columns = [
 
 /*** EVENT HANDLERS ***/
 
+/**
+ * Splits keyboard event to each direction
+ * @param  {event object} event - keyboard event object
+ */
 async function handleBoardMove(event) {
   switch (event.key) {
     case 'ArrowUp':
@@ -53,20 +57,25 @@ async function handleBoardMove(event) {
     default:
       break;
   }
+  // Wait for animations then insert new tile
   await setTimeout(() => {
     insert2(1);
   }, 350);
 }
+/**
+ * 
+ * @param  {string} dir - Direction of movement
+ * @param  {array object} arr - Array of tiles in direction of movement
+ */
 async function handleMove(dir, arr) {
-  console.log(dir, arr);
   let newArr = [...arr];
   for (const [index, column] of arr.entries()) {
     let newCol = [...column];
     for (const [i, tile] of column.entries()) {
       // If at start of column, no need to move
       if (i === 0 || tile === '') continue;
-      let moveCount;
-      moveCount = calculateMoveOfTile(tile, newCol.slice(0, i).reverse());
+      
+      let moveCount = calculateMoveOfTile(tile, newCol.slice(0, i).reverse());
       newCol[i] = '';
       // If new position is empty, move there. If occupied, merge.
       newCol[i - moveCount] =
@@ -122,7 +131,7 @@ function handleReset() {
   [...squares].forEach((square) => {
     square.textContent = '';
   });
-  insert2(8);
+  insert2(2);
 }
 
 /*** HELPER FUNCTIONS ***/
