@@ -1,46 +1,12 @@
-# Astro Starter Kit: Minimal
+## 2048
 
-```
-npm create astro@latest -- --template minimal
-```
+Here is my implementation of the popular game 2048. As always I avoid following tutorials. Instead my approach is to find my onw solutions. Only when I come across an obstacle will I look into the source code of other implementations and search for their solution to a certain issue.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/minimal)
+#### Tech
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Astro
+- vanilla Javascript
 
-## 🚀 Project Structure
+At the moment my target is to take a step back from react and use vanilla javascript and no libaries. I plan to write a post about my reasons for this in a future date. But short answer, I want to learn why and when to use react. To understand what problems it seeks to answer. And this is done by personally walking into those problems!
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+However, due to my wish to bring all my projects on to my personal website, a component framework is very useful. After a bit of research I decided to use Atstro, due to its ability to create 'almost' vanilla like components.
